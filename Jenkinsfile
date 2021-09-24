@@ -1,13 +1,14 @@
 pipeline {
-  agent {
-    docker {image 'continuumio/miniconda3' }
-  }
-  stages {
-    stage('Test') {
-      steps {
-        conda -V
-      }
+    agent {
+        docker { image 'node:14-alpine' }
     }
-  }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'node --version'
+            }
+        }
+    }
 }
+
 
