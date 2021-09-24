@@ -21,7 +21,7 @@ pipeline {
         stage('Run') {
             steps {
                 sh '''
-                conda run -n JDT1 /bin/bash -c
+                conda run -n JDT1 /bin/bash
                 #conda activate JDT1
                 python test.py
                 '''
