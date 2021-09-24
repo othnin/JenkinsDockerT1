@@ -1,12 +1,12 @@
 pipeline {
     agent {
-        docker { image 'continuumio/miniconda3' }
+        docker { image 'continuumio/miniconda3' args '-u root --privileged' }
     }
     stages {
         stage('Install') {
             steps {
                 sh '''
-                whoami
+                #whoami
                 #chown 1000:1000 /.conda/envs/.conda_envs_dir_test
                 #unset SUDO_UID SUDO_GID SUDO_USER
                 conda --version
