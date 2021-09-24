@@ -5,7 +5,7 @@ pipeline {
   stages {
     stage('Test') {
       steps {
-        docker run -t -i continuumio/miniconda3 /bin/bash/conda
+        conda -V
       }
     }
   }
