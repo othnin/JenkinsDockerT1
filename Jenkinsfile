@@ -1,6 +1,9 @@
 pipeline {
     agent {
-        docker { image 'continuumio/miniconda3' args '-u root --privileged' }
+        docker { 
+            image 'continuumio/miniconda3' 
+            args '-u root --privileged'
+        }
     }
     stages {
         stage('Install') {
