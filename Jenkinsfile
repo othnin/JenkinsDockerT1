@@ -3,7 +3,7 @@ pipeline {
         docker { image 'continuumio/miniconda3' }
     }
     stages {
-        stage('Test') {
+        stage('Install') {
             steps {
                 sh 'conda --version'
             }
