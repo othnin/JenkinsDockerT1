@@ -6,7 +6,7 @@ pipeline {
         stage('Install') {
             steps {
                 sh '''
-                sudo chown 1000:1000 /.conda/envs/.conda_envs_dir_test
+                chown 1000:1000 /.conda/envs/.conda_envs_dir_test
                 unset SUDO_UID SUDO_GID SUDO_USER
                 conda --version
                 conda env create -f environment.yaml
