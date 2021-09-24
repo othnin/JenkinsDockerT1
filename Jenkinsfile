@@ -5,8 +5,11 @@ pipeline {
     stages {
         stage('Install') {
             steps {
-                sh 'conda --version'
-                sh 'conda env create -f environment.yaml'
+                sh '''
+                unset SUDO_UID SUDO_GID SUDO_USER
+                conda --version
+                conda env create -f environment.yaml
+                '''
             }
         }
         stage('Run') {
