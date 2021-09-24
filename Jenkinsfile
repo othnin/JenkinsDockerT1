@@ -14,14 +14,15 @@ pipeline {
                 #unset SUDO_UID SUDO_GID SUDO_USER
                 conda --version
                 conda env create -f environment.yaml
-                conda init bash
+                #conda init bash
                 '''
             }
         }
         stage('Run') {
             steps {
                 sh '''
-                conda activate JDT1
+                conda run -n JDT1 /bin/bash -c
+                #conda activate JDT1
                 python test.py
                 '''
             }
