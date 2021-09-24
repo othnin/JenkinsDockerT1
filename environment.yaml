@@ -1,5 +1,5 @@
 
-name: JenkinsTestP5
+name: JDT1
 dependencies:
   - numpy
   - pandas
