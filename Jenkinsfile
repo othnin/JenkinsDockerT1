@@ -20,7 +20,7 @@ pipeline {
         stage('Run') {
             steps {
                 sh '''
-                source activate JDT1
+                conda activate JDT1
                 python test.py
                 '''
             }
